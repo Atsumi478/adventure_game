@@ -8,7 +8,7 @@ def print_pause(message_to_print):
     time.sleep(1)
 
 
-def charactors_who():    
+def charactors_who():
     charactors = ["Saitama", "Goku", "Jojo", "Zoro", "Mario", "Naruto"]
     random.choice(charactors)
     print_pause("Welcome! We picked your name randomly (^^) ")
@@ -16,8 +16,8 @@ def charactors_who():
     print(random.choice(charactors))
     print_pause("The story has begun...")
     time.sleep(3)
-    
-     
+
+
 def intro():
     print_pause("You find yourself standing in an open field,\n"
                 "filled with grass and yellow wildflowers.")
@@ -28,7 +28,7 @@ def intro():
     print_pause("In your hand you hold your 25 cents\n"
                 "(absolutely NOT effective).")
 
-    
+
 def house():
     response = input("Enter 1 to knock on the door of the house.\n"
                      "Enter 2 to peer into the cave.\n"
@@ -49,7 +49,7 @@ def house():
             print_pause("You do your best...")
             print_pause("but your money is not enough for the dragon.")
             print_pause("You have been defeated! - GAME OVER")
-            return play_again()        
+            return play_again()
         elif response_s == "2":
             print_pause("You run back into the field.")
             print_pause("Luckily, you don't seem to have been followed.")
@@ -61,9 +61,9 @@ def house():
         return cave()
     else:
         print_pause("Sorry I don't understand...")
-        return house()  
-    
-    
+        return house()
+
+
 def house_cave():
     response = input("Enter 1 to go back to the house.\n"
                      "Enter 2 to peer into the cave.\n"
@@ -72,16 +72,16 @@ def house_cave():
         print_pause("Does dragon care about money..really?")
         print_pause("I need to something to fight with...")
         return house_cave()
-    elif response == "2": 
+    elif response == "2":
         print_pause("That's the right choice! I need to find something\n"
                     "to fight with..")
         return cave()
     else:
         print_pause("..............again!? I don't understand.")
-        return house_cave()   
-    
-    
-def cave():           
+        return house_cave()
+
+
+def cave():
     print_pause("You peer cautiously into the cave.")
     print_pause("It turns out to be only a very small cave.")
     print_pause("Your eye catches a glint of metal behind a rock.")
@@ -90,14 +90,14 @@ def cave():
                 "sword with you.")
     print_pause("You walk back out to the field.")
     items.append("Sword of Ogoroth")
-    return field(items)    
+    return field(items)
 
 
 def field(items):
     response = input("Enter 1 to knock on the door of the house.\n"
                      "Enter 2 to peer into the cave.\n"
                      "(Please enter 1 or 2 ):\n")
-    if response == "1":    
+    if response == "1":
         print_pause("As the dragon moves to attack, you unsheath\n"
                     "your new sword.")
         print_pause("The Sword of Ogoroth shines brightly in your hand as you "
@@ -113,8 +113,8 @@ def field(items):
     else:
         print_pause("..............")
         return field(items)
-    
-    
+
+
 def play_again():
     a = input("Would you like to play again? (y / n) ").lower()
     if a == "n":
@@ -126,7 +126,7 @@ def play_again():
     else:
         print_pause("I only accept 'y' or 'n' - thanks!")
         return play_again()
-    return intro()  
+    return intro()
 
 
 def adventure_game():
@@ -136,8 +136,7 @@ def adventure_game():
     house_cave()
     cave()
     field(items)
-    play_agein() 
+    play_agein()
 
-  
+
 adventure_game()
-    
